@@ -8,6 +8,9 @@ const productCartRoutes = require('./routes/productCartRoutes')
 const registerRoutes = require('./routes/registerRoutes')
 const productsRoutes = require('./routes/productsRoutes')
 
+const fs=require("fs")
+
+
 app.use(express.static('public'));
 app.use(express.urlencoded({extended: false}));
 
@@ -26,7 +29,13 @@ app.get("/productCreate", function (req,res){
 app.get("/productEdit", function (req,res){
     res.render("products/productEdit")
 })
-
+app.get("/products/:id",function(req,res){
+    const id=req.params.id
+    let data=fs.readFileSync("database/products_json.json",{encoding:"utf-8"})
+    const products=JSON.parse(data)
+    const product= products.find(product=>product.id==id)
+    res.send(product)
+})
 
 app.listen(process.env.PORT || port, () => {
     console.log(`listening at http://localhost:${port}`)
