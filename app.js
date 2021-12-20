@@ -8,8 +8,9 @@ const productCartRoutes = require('./routes/productCartRoutes')
 const registerRoutes = require('./routes/registerRoutes')
 const productsRoutes = require('./routes/productsRoutes')
 
-const fs=require("fs")
-
+// sacar despues
+app.use(express.json()) 
+// 
 
 app.use(express.static('public'));
 app.use(express.urlencoded({extended: false}));
@@ -35,6 +36,33 @@ app.get("/products/:id",function(req,res){
     const products=JSON.parse(data)
     const product= products.find(product=>product.id==id)
     res.send(product)
+})
+
+// const bodyParser = require('body-parser');
+// app.use(bodyParser.urlencoded({ extended: true }))
+// app.use(bodyParser.json())
+// const {body}=require("express-validator")
+// const fs=require("fs")
+// const path=require("path") 
+// const multer=require("multer")
+
+// const storage = multer.diskStorage({
+//     destination: function (req, file, cb) {
+//       cb(null, './images/avatars')
+//     },
+//     filename: function (req, file, cb) {
+//       let fileName = `Avatar-${Date.now()}${path.extname(file.originalname)}`;
+//       cb(null, fileName);
+//     }
+//   })
+//   const upload = multer({ storage:storage})
+
+ 
+app.post("/productCreate",function(req,res){
+ let datos=req.body
+ console.log(datos)
+res.send(datos)
+
 })
 
 app.listen(process.env.PORT || port, () => {
