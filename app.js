@@ -1,7 +1,6 @@
 const express = require('express')
 const app = express()
 const port = 3030
-
 const indexRoutes = require('./routes/indexRoutes')
 const loginRoutes = require('./routes/loginRoutes')
 const productDetailRoutes = require('./routes/productDetailRoutes')
@@ -20,6 +19,14 @@ app.use('/productDetail', productDetailRoutes)
 app.use('/productCart', productCartRoutes)
 app.use('/register', registerRoutes)
 app.use('/products', productsRoutes)
+
+app.get("/productCreate", function (req,res){
+    res.render("products/productCreate")
+})
+app.get("/productEdit", function (req,res){
+    res.render("products/productEdit")
+})
+
 
 app.listen(process.env.PORT || port, () => {
     console.log(`listening at http://localhost:${port}`)

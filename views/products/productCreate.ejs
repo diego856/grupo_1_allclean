@@ -1,0 +1,80 @@
+
+<%- include('../partials/doctype.ejs') %>
+
+    <title>Detalle de producto</title>
+</head>
+<body class="body">
+    <%- include('../partials/header.ejs') %>
+            <section>
+                    <form action="/register" method="post" class="register-create-form" enctype="multipart/form-data">
+                        <h2>Añadir Producto</h2>
+                    
+                        
+                        <div class="register-control-formulario">
+                            <div class="register-icon-container">
+                                <i class="far fa-user"></i>
+                            </div>
+                            
+                        <input 
+                                type="text" 
+                                name="nombreProducto" 
+                                placeholder="Nombre de Producto" 
+                                minlength="5" 
+                                class="register-control"
+                                value="<%= locals.oldData ? oldData.nombreCompleto : "" %>"
+                            >
+                            
+                        </input>
+                        <input 
+                                type="text" 
+                                name="descripcionProducto" 
+                                placeholder="Descripcion de Producto" 
+                                minlength="5" 
+                                class="register-control"
+                                value="<%= locals.oldData ? oldData.nombreCompleto : "" %>"
+                            >
+                            
+                        </input>
+                        <input 
+                                type="file" 
+                                name="imagenProducto" 
+                                placeholder="imagen del producto" 
+                                class="register-control"
+                                value="<%= locals.oldData ? oldData.nombreCompleto : "" %>"
+                            >
+                            
+                        </input>
+                        <input 
+                                type="text" 
+                                name="categoriaProducto" 
+                                placeholder="categoria del producto" 
+                                class="register-control"
+                                value="<%= locals.oldData ? oldData.nombreCompleto : "" %>"
+                            >
+                            
+                        </input>
+                        <input 
+                                type="text" 
+                                name="cantidadProducto" 
+                                placeholder="cantidad del producto" 
+                                class="register-control"
+                                value="<%= locals.oldData ? oldData.nombreCompleto : "" %>"
+                            >
+                            
+                        </input>
+                        <input 
+                                type="text" 
+                                name="precioProducto" 
+                                placeholder="precio del producto" 
+                                class="register-control"
+                                value="<%= locals.oldData ? oldData.nombreCompleto : "" %>"
+                            >
+                            </input>
+
+                            <button type="submit" class="register-submit">Crear</button>
+
+                </form>
+        </section>  
+        <%- include('../partials/footer.ejs') %>
+</body>
+</html>
