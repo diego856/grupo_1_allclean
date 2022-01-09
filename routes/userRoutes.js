@@ -50,7 +50,7 @@ const validations =[
 
 //GET LOGIN PAGE 
 router.get('/login/', usersControllers.userLogin)
-router.post('/login/', usersControllers.processLogin)
+// router.post('/login/', usersControllers.processLogin)
 
 //CREATE ONE USER
 router.get('/register/', usersControllers.userRegister)

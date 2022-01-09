@@ -9,9 +9,8 @@
     <%- include('../partials/header.ejs') %>
     <!-- Include Header-->
 
-    <!-- User Register -->
-    <form action="/users/register" method="post" class="register-create-form" enctype="multipart/form-data">
-        <h2>Registro</h2>
+    <form action="/register" method="post" class="register-create-form" enctype="multipart/form-data">
+        <h2>Creacion</h2>
         <div class="register-actividad-container">
             <label class="tipoActividad"><input type="radio" name="userType" value= "client" <%= locals.oldData && (oldData.userType == "client") ? 'checked' : "" %>> Cliente</label>  
             <label class="tipoActividad"><input type="radio" name="userType" value="admin" <%= locals.oldData && (oldData.userType == "admin") ? 'checked' : "" %>> Admin</label>  
