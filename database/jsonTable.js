@@ -35,6 +35,11 @@ let model = function(tableName) {
             let rows = this.readFile();
             return rows.find(row => row.id == id)
         },
+        findByField(field,text){
+            let rows = this.readFile();
+             const hallado=rows.find(oneUser => oneUser[field] == text)
+             return hallado
+        },
         createUser(row, req) {
             let rows = this.readFile();
             row.id = this.nextId();

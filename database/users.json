@@ -508,5 +508,45 @@
   "password": "$2b$10$jGG.DQTgOe3ohdMPSDw9Qelg7iKIE9LX4AaNsQA2YsYR8qe8dswOO",
   "id": "51",
   "avatar": "Avatar-1641047415169.png"
+ },
+ {
+  "userType": "client",
+  "name": "teteara",
+  "user": "pepe1",
+  "email": "pepe@mail.com",
+  "date": "",
+  "password": "$2b$10$v0abzN.D.Pclq2Ggc197i.KouaonErbnw4fvcElcfVKB1pna9BMVG",
+  "id": 52,
+  "avatar": "sr-x.jpg"
+ },
+ {
+  "userType": "client",
+  "name": "javier",
+  "user": "pepe1",
+  "email": "pepe@mail.com",
+  "date": "",
+  "password": "$2b$10$dq9lMqqbEvMNNFFtNUYVNuW5w8N/jkU6pzqBGdm5hEgH3OCMc3IK6",
+  "id": 53,
+  "avatar": "sr-x.jpg"
+ },
+ {
+  "userType": "client",
+  "name": "javier",
+  "user": "pepe1",
+  "email": "pepe@mail.com",
+  "date": "",
+  "password": "$2b$10$UiCTm1rIN0ZJ9.wYf1cCaOdcLaSO5CuqoZqKxg2MUKM9tVh14o3xm",
+  "id": 54,
+  "avatar": "sr-x.jpg"
+ },
+ {
+  "userType": "client",
+  "name": "javier",
+  "user": "pepe1",
+  "email": "pepe@mail.com",
+  "date": "",
+  "password": "$2b$10$wFGfWnKXnIW5Mpv94dGjF.6oH8tAixtbY2tPUcXOvOyUDYfi0kTiq",
+  "id": 55,
+  "avatar": "sr-x.jpg"
  }
 ]

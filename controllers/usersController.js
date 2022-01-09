@@ -2,13 +2,16 @@ const { validationResult } = require("express-validator")
 const jsonTable = require('../database/jsonTable');
 const users = jsonTable('users');
 
-
 const usersControllers = {
     userLogin:(req, res) => {res.render('users/userLogin')},
+    
+    processLogin:(req, res) => {res.render('users/userLogin')},
 
-    userRegister:(req, res) => {res.render('users/userRegister')},
+    userRegister:(req, res) => { res.render('users/userRegister');
+    },
 
     processRegister: (req, res) => {
+       
         const resultvalidations = validationResult(req);
         
 		let newUser = req.body
@@ -19,13 +22,21 @@ const usersControllers = {
                 errors: resultvalidations.mapped(),
                 oldData: req.body
             })}
-        else
-        {
+         else{
+            
+            const porMail=users.findByField("email",req.body.email)
+             if(porMail){
+               return res.render('users/userRegister',{
+                    errors:{email:{msg:"Este mail esta registrado"}},
+                    oldData: req.body,
+                
+                });
+             }
+
             users.createUser(newUser, req)
             res.redirect('/')
         }
     },
-
     userEdit:(req, res) => {
         const IdUser = req.params.id;
 		const userToEdit = users.find(IdUser);
