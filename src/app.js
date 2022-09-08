@@ -2,16 +2,11 @@ const express = require('express');
 const methodOverride =  require('method-override');
 const app = express();
 const cors = require('cors')
-const port = 3030;
+const port = 4000;
 const session=require("express-session");
 const cookie=require('cookie-parser');
 const path = require('path');
-const userLoggedMiddleware= require('./middlewares/userLoggedMiddleware');
-const indexRoutes = require('./routes/indexRoutes');
-const userRoutes = require('./routes/userRoutes');
-const productsRoutes = require('./routes/productsRoutes');
-const productsApiRoutes = require('./routes/api/productsRouter');
-const userApiRoutes = require('./routes/api/userRouter');
+const ticketApiRoutes = require('../routes/tickets');
 
 app.use(cors())
 
@@ -22,21 +17,13 @@ app.use(express.static(path.resolve(__dirname, '../public')));
 app.use(express.urlencoded({extended: false}));
 app.use(methodOverride('_method'));
 
-//sessions and cookies manager
-app.use(session({secret:'its a secret',resave:false,saveUninitialized:false}));
-app.use(cookie());
-app.use(userLoggedMiddleware);
 
 //view engine setup
 app.set('views', path.resolve(__dirname, './views'));
 app.set('view engine', 'ejs');
 
 //Routes
-app.use('/', indexRoutes);
-app.use('/users', userRoutes);
-app.use('/products', productsRoutes);
-app.use(productsApiRoutes);
-app.use(userApiRoutes);
+app.use(ticketApiRoutes);
 
 
 //Port Listening

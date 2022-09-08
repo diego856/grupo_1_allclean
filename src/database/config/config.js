@@ -1,10 +1,10 @@
 module.exports = {
   "development": {
-    "username": "root",
-    "password": "1234",
-    "database": "allclean",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "username": "sa",
+    "password": "mandragora15",
+    "database": "cinettickets",
+    "host": "PC-CASA-RYZEN,1433",
+    "dialect": "mssql"
   },
   "test": {
     "username": "root",
